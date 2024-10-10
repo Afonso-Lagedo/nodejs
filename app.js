@@ -1,6 +1,9 @@
-//import sum and sub
+var http = require("http");
 
-var sumFunc = require("./sum");
-var subFunc = require("./sub");
+http
+  .createServer(function (req, res) {
+    res.end("Hello World");
+  })
+  .listen(3300);
 
-console.log(sumFunc(1, 2)); // 3
+console.log("Server is running on port 3300");
