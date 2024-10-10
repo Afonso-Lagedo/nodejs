@@ -9,6 +9,11 @@ app.get("/teste", function (req, res) {
   res.send("Hello Teste");
 });
 
+app.get("/hi/:nome/:idade", function (req, res) {
+  //res.send(req.params);
+  res.send(req.params.nome);
+});
+
 //finally
 app.listen(3031, function () {
   console.log("Server is running on port 3031");
