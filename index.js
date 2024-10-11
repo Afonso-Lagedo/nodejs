@@ -1,23 +1,18 @@
 const express = require("express");
 const app = express();
+const handlebars = require("express-handlebars");
+const Sequelize = require("sequelize");
 
-app.get("/", function (req, res) {
-  res.send("Hello World");
+const sequelize = new Sequelize("teste", "root", "", {
+  host: "localhost",
+  dialect: "mysql",
 });
 
-app.get("/teste", function (req, res) {
-  res.send("Hello Teste");
-});
+//Config
 
-app.get("/hi/:nome/:idade", function (req, res) {
-  //res.send(req.params);
-  res.send(req.params.nome);
-});
-
-//route to file
-app.get("/html", function (req, res) {
-  res.sendFile(__dirname + "/html/index.html");
-});
+//Template Engine
+app.engine("handlebars", handlebars({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
 //finally
 app.listen(3031, function () {

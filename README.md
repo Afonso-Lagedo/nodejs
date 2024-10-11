@@ -17,3 +17,6 @@ nodemon FILEnAME
 #BANCO
 npm install --save sequelize
 npm install --save mysql2
+
+#Handlebars
+npm install --save express-handlebars
