@@ -23,6 +23,13 @@ const sequelize = new Sequelize("teste", "root", "", {
   dialect: "mysql",
 });
 
+//Rotas
+
+app.get("/cad", function (req, res) {
+  //res.send("Rota de cadastro de postagem");
+  res.render("form"); //renderizando a pagina form.handlebars
+});
+
 //finally
 app.listen(3031, function () {
   console.log("Server is running on port 3031");
