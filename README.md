@@ -20,3 +20,6 @@ npm install --save mysql2
 
 #Handlebars
 npm install --save express-handlebars
+
+#Deixar On as rotas para aplicações externas
+npm install cors

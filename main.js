@@ -3,6 +3,10 @@ const rotas = express();
 
 const Sequelize = require("sequelize");
 
+const cors = require("cors"); // Importa o CORS
+// Habilita o CORS
+rotas.use(cors());
+
 //###Banco de dados###
 const conexaoBanco = new Sequelize("teste", "root", "", {
   host: "localhost",
@@ -21,7 +25,7 @@ const Aluno = conexaoBanco.define("alunos", {
 });
 
 //conectando com o banco de dados
-Aluno.sync({ force: false }); //false após criar a tabela
+Aluno.sync({ force: false}); //false após criar a tabela
 
 //###Rotas###
 rotas.get("/", function (req, res) {
